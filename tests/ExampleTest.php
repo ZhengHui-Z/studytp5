@@ -1,17 +1,20 @@
 <?php
 // +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2016 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006-2015 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: liu21st <liu21st@gmail.com>
+// | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
+namespace tests;
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ]
+class ExampleTest extends TestCase
+{
 
-];
+    public function testBasicExample()
+    {
+        $this->visit('/')->see('ThinkPHP');
+    }
+}
