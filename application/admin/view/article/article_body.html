@@ -1,0 +1,54 @@
+<div class="layui-body">
+    <div class="layui-tab layui-tab-brief" lay-filter="tabs">
+        <ul class="layui-tab-title">
+            <li class="layui-this">文章列表</li>
+            <li>写文章</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">文章列表</div>
+            <div class="layui-tab-item">
+                <div class="layui-markdown-container">
+                    <div class="layui-markdown-edit layui-markdown-scroll">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">文章标题</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">文章摘要</label>
+                                <div class="layui-input-block">
+                                    <textarea name="desc" placeholder="100字以内" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">密码访问</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="switch" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+                                    <input id="haspass" type="text" name="haspass" required lay-verify="required" placeholder="输入密码" autocomplete="off" class="layui-input"
+                                        style="width: 15rem;display: none;margin-left: 50px;">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">文章正文</label>
+                            </div>
+                            <div class="layui-form-item">
+                                <div id="layui_md"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-markdown-preview">
+                        <div id="markdown_html" style="height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

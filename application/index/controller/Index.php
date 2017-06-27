@@ -32,7 +32,6 @@ class Index extends Controller
         } else {
             return json(["msg" => "Not Ajax"]);
         }
-
     }
     public function upload()
     {

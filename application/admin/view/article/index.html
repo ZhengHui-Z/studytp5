@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/img/logo.bmp">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {css href="/static/layui/css/layui.css" /} {css href="/static/css/newbie_admin.css" /} {css href="/static/layui/markdown/markdown-editor.css"
+    /} {css href="/static/layui/markdown/markdown.css" /} {css href="/static/layui/markdown/prism.css" /}
+<style>
+.layui-form-label {
+    float: left;
+    padding: 9px 0px;
+    text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="layui-layout layui-layout-admin">
+        {include file="public/top_nav" /} {include file="public/side_nav" /} {include file="article/article_body" /} {include file="public/admin_footer"
+        /}
+    </div>
+
+</body>
+{js href="/static/layui/markdown/clipboard.min.js" /} {js href="/static/layui/markdown/Parser.js" /} {js href="/static/layui/markdown/prism.js"
+/} {js href="/static/layui/layui.js" /}
+<script>
+    layui.config({
+        base: '/static/layui/lay/modules/'
+    }).use(['layer', 'element', 'jquery', 'form', 'markdown'], function () {
+        var layer = layui.layer,
+            element = layui.element,
+            $ = layui.jquery,
+            form = layui.form(),
+            markdown = layui.markdown;
+        markdown.build("layui_md", 'markdown_html', {
+            image_upload_action: '#',
+            height: '666px',
+            required: true,
+        });
+        //监听指定开关
+        form.on('switch(switchTest)', function (data) {
+            if(this.checked){$("input[name='haspass']").css('display','inline-block');}
+            else {$("input[name='haspass']").css('display','none');}
+        });
+        layer.msg('后台加载成功');
+
+    });
+
+</script>
+
+</html>
